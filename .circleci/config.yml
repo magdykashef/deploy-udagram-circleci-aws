@@ -45,7 +45,7 @@ jobs:
           command: |
             npm run frontend:deploy
 workflows:
-  Storefront:
+  Udagram:
     jobs:
       - build:
           filters:

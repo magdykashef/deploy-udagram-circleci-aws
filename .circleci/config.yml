@@ -10,10 +10,7 @@ jobs:
   build:
     docker:
       - image: cimg/node:17.4.0-browsers
-        environment:
-          CHROME_BIN: /usr/bin/google-chrome
     steps:
-      - browser-tools/install-browser-tools
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
       - node/install
@@ -35,7 +32,7 @@ jobs:
       - run:
           name: BackEnd Build
           command: |
-            npm run backend:build"
+            npm run backend:build
       - run:
           name: FrontEnd Build
           command: |

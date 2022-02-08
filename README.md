@@ -2,9 +2,11 @@
 
 <p>
 
-FullStack app built with Angular, Nodejs, Express and Postgres, hosted on [AWS](https://aws.amazon.com/), and use [CircleCI](https://circleci.com/) as CI/CD.
+FullStack app built with Angular, Nodejs, Express and Postgres, hosted on [AWS](https://aws.amazon.com/), and use [CircleCI](https://circleci.com/) as CI/CD. [Click here to see Front-End demo](http://udacity-udagram-bucket.s3-website-us-east-1.amazonaws.com/home)
 
 </p>
+
+
 
 ## Table of content
 

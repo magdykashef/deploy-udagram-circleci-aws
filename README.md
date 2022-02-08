@@ -1,17 +1,25 @@
 # Udagram
 
-This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.
+<p>
 
-## Getting Started
+FullStack app built with Angular, Nodejs, Express and Postgres, hosted on [AWS](https://aws.amazon.com/), and use [CircleCI](https://circleci.com/) as CI/CD.
 
-1. Clone this repo locally into the location of your choice.
-1. Move the content of the udagram folder at the root of the repository as this will become the main content of the project.
-1. Open a terminal and navigate to the root of the repo
-1. follow the instructions in the installation step
+</p>
 
-The project can run but is missing some information to connect to the database and storage service. These will be setup during the course of the project
+## Table of content
 
-### Dependencies
+- [Getting Started](#Getting-Started)
+- [Requirements](#Requirements)
+- [Dependencies](./docs/dependencies.md)
+- [Infrastructure](./docs/Infrastructure.md)
+- [Pipeline](./docs/pipeline.md)
+- [Installation](#Installation)
+- [Setup Environment](#Setup-Environment)
+- [Available scripts](#available-scripts)
+- [Built With](#Built-With)
+
+
+## Requirements
 
 ```
 - Node v14.15.1 (LTS) or more recent. While older versions can work it is advisable to keep node to latest LTS version
@@ -20,11 +28,18 @@ The project can run but is missing some information to connect to the database a
 
 - AWS CLI v2, v1 can work but was not tested for this project
 
+- Elastick beanstalk CLI v3.14.13
+
 - A RDS database running Postgres.
 
 - A S3 bucket for hosting uploaded pictures.
-
 ```
+
+## Getting Started
+
+1. Clone this repo locally into the location of your choice.
+1. Open a terminal and navigate to the root of the repo
+1. follow the instructions in the installation step
 
 ### Installation
 
@@ -32,27 +47,49 @@ Provision the necessary AWS services needed for running the application:
 
 1. In AWS, provision a publicly available RDS database running Postgres. <Place holder for link to classroom article>
 1. In AWS, provision a s3 bucket for hosting the uploaded files. <Place holder for tlink to classroom article>
-1. Export the ENV variables needed or use a package like [dotnev](https://www.npmjs.com/package/dotenv)/.
-1. From the root of the repo, navigate udagram-api folder `cd starter/udagram-api` to install the node_modules `npm install`. After installation is done start the api in dev mode with `npm run dev`.
-1. Without closing the terminal in step 1, navigate to the udagram-frontend `cd starter/udagram-frontend` to intall the node_modules `npm install`. After installation is done start the api in dev mode with `npm run start`.
+1. From the root of the repo, to install the node_modules run the following: 
+- `npm run backend:install`
+- `npm run frontend:install`
 
-## Testing
+
+### Setup Environment
+Bellow are the environmental variables that needs to be set in a `.env` file. This is the default setting that I used for development, but you can change it to what works for you.
+
+Go to `udagram-api` directory, then create a `.env` file with all the required environment variables:
+
+
+```bash
+PORT=EXPRESS_PORT
+DB_PORT=DATA_BASE_PORT
+
+POSTGRES_HOST=POSTGRES_HOST
+POSTGRES_USERNAME=POSTGRES_USERNAME
+POSTGRES_PASSWORD=POSTGRES_PASSWORD
+POSTGRES_DB=DATA_BASE_NAME
+URL="http://localhost"
+JWT_SECRET=JWT_SECRET
+
+AWS_REGION=AWS_REGION
+AWS_PROFILE=AWS_PROFILE
+AWS_BUCKET=AWS_BUCKET
+```
+
+
+## Available scripts:
+
+### Up and Running
+
+1. `npm run backend:dev`
+2. `npm run frontend:start`
+
+### Testing
 
 This project contains two different test suite: unit tests and End-To-End tests(e2e). Follow these steps to run the tests.
 
-1. `cd starter/udagram-frontend`
-1. `npm run test`
-1. `npm run e2e`
+1. `npm run frontend:test`
+1. `npm run frontend:e2e`
 
-There are no Unit test on the back-end
-
-### Unit Tests:
-
-Unit tests are using the Jasmine Framework.
-
-### End to End Tests:
-
-The e2e tests are using Protractor and Jasmine.
+<br>
 
 ## Built With
 
